@@ -1,0 +1,205 @@
+/* ==========================================================================
+   EMILY'S STYLE CHANGES
+   Loaded last, so everything here overrides the template's defaults.
+   To change the accent colour, edit --global-link-color below.
+   ========================================================================== */
+
+$serif-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+$sans-text: "Source Sans 3", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+/* Colours: light mode */
+:root {
+  --global-base-color          : #1d4f91;
+  --global-text-color          : #1f2a37;
+  --global-text-color-light    : #5b6878;
+  --global-link-color          : #1d4f91;
+  --global-link-color-hover    : #0f2f5a;
+  --global-link-color-visited  : #1d4f91;
+  --global-border-color        : #e2e6eb;
+  --global-masthead-link-color : #3b4756;
+  --global-masthead-link-color-hover : #1d4f91;
+  --global-footer-bg-color     : #ffffff;
+  --paper-tag-bg               : #eef3fa;
+}
+
+/* Colours: dark mode (the sun/moon button in the menu) */
+html[data-theme="dark"] {
+  --global-text-color          : #e6e9ee;
+  --global-text-color-light    : #a9b3c0;
+  --global-link-color          : #8fb8ec;
+  --global-link-color-hover    : #c3dafa;
+  --global-link-color-visited  : #8fb8ec;
+  --global-masthead-link-color : #c9d0d9;
+  --global-masthead-link-color-hover : #8fb8ec;
+  --paper-tag-bg               : #3b4a5c;
+}
+
+/* Type */
+body,
+.masthead,
+.masthead__inner-wrap,
+.greedy-nav,
+.greedy-nav a,
+.sidebar,
+.sidebar p,
+.sidebar li,
+.page__footer {
+  font-family: $sans-text;
+}
+
+.sidebar .author__name {
+  font-family: $serif-display;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4,
+.page__title,
+.author__name,
+.masthead__menu-item--lg a {
+  font-family: $serif-display;
+  font-weight: 600;
+  color: var(--global-text-color);
+}
+
+.page__title {
+  font-size: 2.1em;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4em;
+}
+
+.page__content h2 {
+  font-size: 1.4em;
+  margin-top: 1.8em;
+  padding-bottom: 0.35em;
+}
+
+.page__content a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+/* Header menu: selected page underlined in the accent colour */
+.masthead__menu-item.selected a,
+.masthead__menu-item.selected a:hover {
+  color: var(--global-link-color);
+  border-bottom-color: var(--global-link-color);
+}
+
+.masthead__menu-item--lg a {
+  font-size: 1.15em;
+}
+
+/* Sidebar */
+.author__bio {
+  color: var(--global-text-color-light);
+}
+
+/* Home page: roles, contact and interests under the name */
+.home-intro {
+  margin-bottom: 2em;
+  padding-bottom: 1.4em;
+  border-bottom: 1px solid var(--global-border-color);
+
+  p {
+    margin: 0 0 0.6em;
+  }
+
+  p:first-child {
+    font-size: 1.12em;
+    line-height: 1.45;
+  }
+}
+
+.interests {
+  color: var(--global-text-color-light);
+}
+
+/* Research page: one block per paper */
+.paper {
+  margin: 0 0 1.9em;
+
+  h3 {
+    font-size: 1.12em;
+    line-height: 1.35;
+    margin: 0 0 0.3em;
+  }
+
+  h3 a {
+    text-decoration: none;
+  }
+
+  h3 a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    margin: 0 0 0.35em;
+    color: var(--global-text-color-light);
+  }
+
+  p em {
+    color: var(--global-text-color);
+  }
+}
+
+/* Small link buttons under a paper, e.g. [PDF] [Slides] */
+.paper-links a {
+  display: inline-block;
+  margin: 0.25em 0.4em 0 0;
+  padding: 0.05em 0.6em;
+  font-size: 0.85em;
+  border-radius: 3px;
+  background: var(--paper-tag-bg);
+  text-decoration: none;
+}
+
+.paper-links a:hover {
+  text-decoration: underline;
+}
+
+/* Collapsible abstract */
+.paper details {
+  margin-top: 0.4em;
+
+  summary {
+    cursor: pointer;
+    font-size: 0.9em;
+    color: var(--global-link-color);
+    width: max-content;
+  }
+
+  summary:focus-visible {
+    outline: 2px solid var(--global-link-color);
+    outline-offset: 2px;
+  }
+
+  p {
+    margin-top: 0.5em;
+    font-size: 0.95em;
+    line-height: 1.55;
+    color: var(--global-text-color);
+  }
+}
+
+/* Footer */
+.page__footer {
+  border-top: 1px solid var(--global-border-color);
+}
+
+/* Footer sits at the end of the page instead of staying fixed on screen */
+body {
+  padding-bottom: 0;
+  margin-bottom: 0 !important;
+}
+
+.page__footer {
+  position: static;
+  margin-top: 4em;
+}
+
+/* Long email address in the sidebar wraps instead of overflowing */
+.author__urls li.author__email {
+  display: flex;
+  align-items: baseline;
+  white-space: normal;
+}
